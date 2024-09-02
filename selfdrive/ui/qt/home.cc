@@ -42,6 +42,7 @@ HomeWindow::HomeWindow(QWidget* parent) : QWidget(parent) {
   QObject::connect(uiState(), &UIState::uiUpdate, this, &HomeWindow::updateState);
   QObject::connect(uiState(), &UIState::offroadTransition, this, &HomeWindow::offroadTransition);
   QObject::connect(uiState(), &UIState::offroadTransition, sidebar, &Sidebar::offroadTransition);
+  notification = new NotificationWidget(this);
 }
 
 void HomeWindow::showSidebar(bool show) {
@@ -55,6 +56,31 @@ void HomeWindow::updateState(const UIState &s) {
   if (onroad->isVisible() && !body->isEnabled() && sm["carParams"].getCarParams().getNotCar()) {
     body->setEnabled(true);
     slayout->setCurrentWidget(body);
+  }
+
+  if (sm.updated("chatLine")) {
+    if (!notification_init) {
+      notification->setGeometry(50, 50, width() - 100, height() - 100);
+      notification->raise();
+      notification->setWindowFlags(Qt::WindowStaysOnTopHint);
+      notification_init = true;
+    }
+    const auto cl = sm["chatLine"].getChatLine();
+
+    // Check for new messages from the system
+    if (cl.getRole() == cereal::ChatLine::Role::OPEN) {
+      notification->showNotification(true);
+    }
+    else if (cl.getRole() == cereal::ChatLine::Role::USER) {
+      auto text = cl.getText();
+      notification->addMessage(QString::fromStdString(text), true);
+    }
+    else if (cl.getRole() == cereal::ChatLine::Role::SYSTEM) {
+      auto text = cl.getText();
+      notification->addMessage(QString::fromStdString(text), false);
+    } else if (cl.getRole() == cereal::ChatLine::Role::CLOSE) {
+      notification->resetHideTimer(3000);
+    }
   }
 }
 

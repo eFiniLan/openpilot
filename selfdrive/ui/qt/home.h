@@ -15,6 +15,7 @@
 #include "selfdrive/ui/qt/widgets/controls.h"
 #include "selfdrive/ui/qt/widgets/offroad_alerts.h"
 #include "selfdrive/ui/ui.h"
+#include "acauto/ui/qt/widgets/notification.h"
 
 class OffroadHome : public QFrame {
   Q_OBJECT
@@ -67,6 +68,9 @@ private:
   BodyWindow *body;
   DriverViewWindow *driver_view;
   QStackedLayout *slayout;
+
+  NotificationWidget *notification;
+  bool notification_init = false;
 
 private slots:
   void updateState(const UIState &s);
