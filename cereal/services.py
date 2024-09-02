@@ -88,6 +88,14 @@ _services: dict[str, tuple] = {
   "customReservedRawData0": (True, 0.),
   "customReservedRawData1": (True, 0.),
   "customReservedRawData2": (True, 0.),
+
+  "chatRequest": (False, 0),
+  "chatResponse": (False, 0),
+  "controlRequest": (False, 0),
+  "controlResponse": (False, 0),
+  "micState": (False, 0),
+  "speakerState": (False, 0),
+  "chatLine": (False, 0),
 }
 SERVICE_LIST = {name: Service(*vals) for
                 idx, (name, vals) in enumerate(_services.items())}

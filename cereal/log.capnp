@@ -2381,14 +2381,14 @@ struct Event {
     customReservedRawData2 @126 :Data;
 
     # *********** Custom: reserved for forks ***********
-    customReserved0 @107 :Custom.CustomReserved0;
-    customReserved1 @108 :Custom.CustomReserved1;
-    customReserved2 @109 :Custom.CustomReserved2;
-    customReserved3 @110 :Custom.CustomReserved3;
-    customReserved4 @111 :Custom.CustomReserved4;
-    customReserved5 @112 :Custom.CustomReserved5;
-    customReserved6 @113 :Custom.CustomReserved6;
-    customReserved7 @114 :Custom.CustomReserved7;
+    chatRequest @107 :Custom.ChatRequest;
+    chatResponse @108 :Custom.ChatResponse;
+    controlRequest @109 :List(Custom.ControlRequest);
+    controlResponse @110 :Custom.ControlResponse;
+    sendcanExt @111 :List(CanData);
+    micState @112 :Custom.MicState;
+    speakerState @113 :Custom.SpeakerState;
+    chatLine @114 :Custom.ChatLine;
     customReserved8 @115 :Custom.CustomReserved8;
     customReserved9 @116 :Custom.CustomReserved9;
 

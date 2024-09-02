@@ -8,25 +8,53 @@ $Cxx.namespace("cereal");
 # cereal, so use these if you want custom events in your fork.
 
 # you can rename the struct, but don't change the identifier
-struct CustomReserved0 @0x81c2f05a394cf4af {
+struct ChatRequest @0x81c2f05a394cf4af {
+  text @0 :Text;
 }
 
-struct CustomReserved1 @0xaedffd8f31e7b55d {
+struct ChatResponse @0xaedffd8f31e7b55d {
+  text @0 :Text;
 }
 
-struct CustomReserved2 @0xf35cc4560bbf6ec2 {
+struct ControlRequest @0xf35cc4560bbf6ec2 {
+  id @0 :Text;
+  name @1 :Text;
+  args @2 :Text;
 }
 
-struct CustomReserved3 @0xda96579883444c35 {
+struct ControlResponse @0xda96579883444c35 {
+  id @0 :Text;
+  name @1 :Text;
+  result @2 :Text;
 }
 
-struct CustomReserved4 @0x80ae746ee2596b11 {
+struct MicState @0x80ae746ee2596b11 {
+  state @0 :State;
+
+  enum State {
+    idle @0;
+    listening @1;
+  }
 }
 
-struct CustomReserved5 @0xa5cd762cd951a455 {
+struct SpeakerState @0xa5cd762cd951a455 {
+  state @0 :State;
+  enum State {
+    idle @0;
+    speaking @1;
+  }
 }
 
-struct CustomReserved6 @0xf98d843bfd7004a3 {
+struct ChatLine @0xf98d843bfd7004a3 {
+  text @0 :Text;
+  role @1 :Role;
+
+  enum Role {
+    open @0;
+    user @1;
+    system @2;
+    close @3;
+  }
 }
 
 struct CustomReserved7 @0xb86e6369214c01c8 {

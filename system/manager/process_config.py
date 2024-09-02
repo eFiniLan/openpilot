@@ -85,6 +85,12 @@ procs = [
   NativeProcess("bridge", "cereal/messaging", ["./bridge"], notcar),
   PythonProcess("webrtcd", "system.webrtc.webrtcd", notcar),
   PythonProcess("webjoystick", "tools.bodyteleop.web", notcar),
+
+  # acauto
+  PythonProcess("acauto_micd", "acauto.input.micd", always_run),
+  PythonProcess("acauto_modeld", "acauto.lmd.modeld", always_run),
+  PythonProcess("acauto_speakerd", "acauto.output.speakerd", always_run),
+  PythonProcess("acauto_controlsd", "acauto.controlsd", only_offroad),
 ]
 
 managed_processes = {p.name: p for p in procs}
