@@ -29,6 +29,8 @@ function agnos_init {
     fi
     $DIR/system/hardware/tici/updater $AGNOS_PY $MANIFEST
   fi
+  # rick - make sure we have all cores
+  python -c "from openpilot.system.hardware.tici.hardware import Tici; tici = Tici(); tici.set_power_save(False);"
 }
 
 function launch {
