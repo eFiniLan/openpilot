@@ -287,7 +287,7 @@ std::optional<bool> send_panda_states(PubMaster *pm, const std::vector<Panda *> 
 
     // Make sure CAN buses are live: safety_setter_thread does not work if Panda CAN are silent and there is only one other CAN node
     if (health.safety_mode_pkt == (uint8_t)(cereal::CarParams::SafetyModel::SILENT)) {
-      panda->set_safety_model(cereal::CarParams::SafetyModel::NO_OUTPUT);
+      panda->set_safety_model(cereal::CarParams::SafetyModel::ELM327);
     }
 
     bool power_save_desired = !ignition_local;
@@ -296,8 +296,8 @@ std::optional<bool> send_panda_states(PubMaster *pm, const std::vector<Panda *> 
     }
 
     // set safety mode to NO_OUTPUT when car is off. ELM327 is an alternative if we want to leverage athenad/connect
-    if (!ignition_local && (health.safety_mode_pkt != (uint8_t)(cereal::CarParams::SafetyModel::NO_OUTPUT))) {
-      panda->set_safety_model(cereal::CarParams::SafetyModel::NO_OUTPUT);
+    if (!ignition_local && (health.safety_mode_pkt != (uint8_t)(cereal::CarParams::SafetyModel::ELM327))) {
+      panda->set_safety_model(cereal::CarParams::SafetyModel::ELM327);
     }
 
     if (!panda->comms_healthy()) {
