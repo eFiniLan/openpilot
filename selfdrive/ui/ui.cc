@@ -348,16 +348,16 @@ void Device::updateBrightness(const UIState &s) {
 }
 
 void Device::updateWakefulness(const UIState &s) {
-  bool ignition_just_turned_off = !s.scene.ignition && ignition_on;
-  ignition_on = s.scene.ignition;
-
-  if (ignition_just_turned_off) {
-    resetInteractiveTimeout();
-  } else if (interactive_timeout > 0 && --interactive_timeout == 0) {
-    emit interactiveTimeout();
-  }
-
-  setAwake(s.scene.ignition || interactive_timeout > 0);
+//  bool ignition_just_turned_off = !s.scene.ignition && ignition_on;
+//  ignition_on = s.scene.ignition;
+//
+//  if (ignition_just_turned_off) {
+//    resetInteractiveTimeout();
+//  } else if (interactive_timeout > 0 && --interactive_timeout == 0) {
+//    emit interactiveTimeout();
+//  }
+//
+  setAwake(true); //s.scene.ignition || interactive_timeout > 0);
 }
 
 UIState *uiState() {
