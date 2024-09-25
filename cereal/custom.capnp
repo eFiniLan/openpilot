@@ -28,24 +28,7 @@ struct ControlResponse @0xda96579883444c35 {
   result @2 :Text;
 }
 
-struct MicState @0x80ae746ee2596b11 {
-  state @0 :State;
-
-  enum State {
-    idle @0;
-    listening @1;
-  }
-}
-
-struct SpeakerState @0xa5cd762cd951a455 {
-  state @0 :State;
-  enum State {
-    idle @0;
-    speaking @1;
-  }
-}
-
-struct ChatLine @0xf98d843bfd7004a3 {
+struct ChatLine @0x80ae746ee2596b11 {
   text @0 :Text;
   role @1 :Role;
 
@@ -55,6 +38,9 @@ struct ChatLine @0xf98d843bfd7004a3 {
     system @2;
     close @3;
   }
+}
+
+struct CustomReserved6 @0xf98d843bfd7004a3 {
 }
 
 struct CustomReserved7 @0xb86e6369214c01c8 {

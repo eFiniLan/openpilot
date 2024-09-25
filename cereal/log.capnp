@@ -2386,9 +2386,9 @@ struct Event {
     controlRequest @109 :List(Custom.ControlRequest);
     controlResponse @110 :Custom.ControlResponse;
     sendcanExt @111 :List(CanData);
-    micState @112 :Custom.MicState;
-    speakerState @113 :Custom.SpeakerState;
-    chatLine @114 :Custom.ChatLine;
+    chatLine @112 :Custom.ChatLine;
+    customReserved6 @113 :Custom.CustomReserved6;
+    customReserved7 @114 :Custom.CustomReserved7;
     customReserved8 @115 :Custom.CustomReserved8;
     customReserved9 @116 :Custom.CustomReserved9;
 
