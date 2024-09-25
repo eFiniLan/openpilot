@@ -42,11 +42,9 @@ def only_offroad(started, params, CP: car.CarParams) -> bool:
   return not started
 
 procs = [
-  # acauto
-  NativeProcess("acauto_micd_onroad", "acauto/input", ["./micd"], only_onroad),
-  NativeProcess("acauto_micd_offroad", "acauto/input", ["./micd"], only_offroad),
+  # aceauto
+  PythonProcess("acauto_audiod", "acauto.audiod", always_run),
   PythonProcess("acauto_modeld", "acauto.lmd.modeld", always_run),
-  PythonProcess("acauto_speakerd", "acauto.output.speakerd", always_run),
   PythonProcess("acauto_controlsd", "acauto.controlsd", only_offroad),
 
   # DaemonProcess("manage_athenad", "system.athena.manage_athenad", "AthenadPid"),
