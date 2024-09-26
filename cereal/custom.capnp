@@ -40,7 +40,8 @@ struct ChatLine @0x80ae746ee2596b11 {
   }
 }
 
-struct CustomReserved6 @0xf98d843bfd7004a3 {
+struct VehicleRequest @0xf98d843bfd7004a3 {
+  text @0 :Text;
 }
 
 struct CustomReserved7 @0xb86e6369214c01c8 {

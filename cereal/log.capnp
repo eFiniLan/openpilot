@@ -2387,7 +2387,7 @@ struct Event {
     controlResponse @110 :Custom.ControlResponse;
     sendcanExt @111 :List(CanData);
     chatLine @112 :Custom.ChatLine;
-    customReserved6 @113 :Custom.CustomReserved6;
+    vehicleRequest @113 :Custom.VehicleRequest;
     customReserved7 @114 :Custom.CustomReserved7;
     customReserved8 @115 :Custom.CustomReserved8;
     customReserved9 @116 :Custom.CustomReserved9;

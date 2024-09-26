@@ -95,6 +95,7 @@ _services: dict[str, tuple] = {
   "controlResponse": (False, 0),
   "chatLine": (False, 0),
   "sendcanExt": (False, 0),
+  "vehicleRequest": (False, 0),
 }
 SERVICE_LIST = {name: Service(*vals) for
                 idx, (name, vals) in enumerate(_services.items())}
