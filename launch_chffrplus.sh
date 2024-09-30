@@ -77,6 +77,7 @@ function launch {
 
   # hardware specific init
   if [ -f /AGNOS ]; then
+    pip install soundfile openwakeword silero_vad groq openai librosa
     agnos_init
   fi
 
