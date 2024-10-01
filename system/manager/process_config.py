@@ -46,7 +46,7 @@ procs = [
   NativeProcess("acauto_audiod", "acauto/audiod", ["./audiod"], always_run),
   PythonProcess("acauto_modeld", "acauto.lmd.modeld", always_run),
   PythonProcess("acauto_controlsd", "acauto.controlsd", only_offroad),
-  # PythonProcess("acauto_vehicled", "acauto.vehicled", only_onroad),
+  PythonProcess("acauto_vehicled", "acauto.vehicled", only_onroad),
 
   # DaemonProcess("manage_athenad", "system.athena.manage_athenad", "AthenadPid"),
 
