@@ -28,15 +28,15 @@ HomeWindow::HomeWindow(QWidget* parent) : QWidget(parent) {
   slayout->addWidget(home);
 
   onroad = new OnroadWindow(this);
-  slayout->addWidget(onroad);
+//  slayout->addWidget(onroad);
 
   body = new BodyWindow(this);
   slayout->addWidget(body);
 
   driver_view = new DriverViewWindow(this);
-  connect(driver_view, &DriverViewWindow::done, [=] {
-    showDriverView(false);
-  });
+//  connect(driver_view, &DriverViewWindow::done, [=] {
+//    showDriverView(false);
+//  });
   slayout->addWidget(driver_view);
   setAttribute(Qt::WA_NoSystemBackground);
   QObject::connect(uiState(), &UIState::uiUpdate, this, &HomeWindow::updateState);
@@ -86,7 +86,7 @@ void HomeWindow::offroadTransition(bool offroad) {
   if (offroad) {
     slayout->setCurrentWidget(home);
   } else {
-    slayout->setCurrentWidget(onroad);
+    slayout->setCurrentWidget(driver_view);
   }
 }
 
@@ -102,7 +102,7 @@ void HomeWindow::showDriverView(bool show) {
 
 void HomeWindow::mousePressEvent(QMouseEvent* e) {
   // Handle sidebar collapsing
-  if ((onroad->isVisible() || body->isVisible()) && (!sidebar->isVisible() || e->x() > sidebar->width())) {
+  if ((driver_view->isVisible() || body->isVisible()) && (!sidebar->isVisible() || e->x() > sidebar->width())) {
     sidebar->setVisible(!sidebar->isVisible());
   }
 }
