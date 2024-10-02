@@ -25,7 +25,7 @@ void Sidebar::drawMetric(QPainter &p, const QPair<QString, QString> &label, QCol
 }
 
 Sidebar::Sidebar(QWidget *parent) : QFrame(parent), onroad(false), flag_pressed(false), settings_pressed(false) {
-  home_img = loadPixmap("../assets/images/button_home.png", home_btn.size());
+  home_img = loadPixmap("../../acauto/assets/logo.png", home_btn.size());
   flag_img = loadPixmap("../assets/images/button_flag.png", home_btn.size());
   settings_img = loadPixmap("../assets/images/button_settings.png", settings_btn.size(), Qt::IgnoreAspectRatio);
 
@@ -130,14 +130,14 @@ void Sidebar::paintEvent(QPaintEvent *event) {
     p.drawEllipse(x, 196, 27, 27);
     x += 37;
   }
-
-  p.setFont(InterFont(35));
-  p.setPen(QColor(0xff, 0xff, 0xff));
-  const QRect r = QRect(50, 247, 100, 50);
-  p.drawText(r, Qt::AlignCenter, net_type);
-
-  // metrics
-  drawMetric(p, temp_status.first, temp_status.second, 338);
-  drawMetric(p, panda_status.first, panda_status.second, 496);
-  drawMetric(p, connect_status.first, connect_status.second, 654);
+//
+//  p.setFont(InterFont(35));
+//  p.setPen(QColor(0xff, 0xff, 0xff));
+//  const QRect r = QRect(50, 247, 100, 50);
+//  p.drawText(r, Qt::AlignCenter, net_type);
+//
+//  // metrics
+//  drawMetric(p, temp_status.first, temp_status.second, 338);
+//  drawMetric(p, panda_status.first, panda_status.second, 496);
+//  drawMetric(p, connect_status.first, connect_status.second, 654);
 }
