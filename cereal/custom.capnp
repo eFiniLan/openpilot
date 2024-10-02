@@ -14,6 +14,7 @@ struct ChatRequest @0x81c2f05a394cf4af {
 
 struct ChatResponse @0xaedffd8f31e7b55d {
   text @0 :Text;
+  fromRole @1 :Text;
 }
 
 struct ControlRequest @0xf35cc4560bbf6ec2 {
