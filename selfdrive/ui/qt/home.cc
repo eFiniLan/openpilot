@@ -162,10 +162,10 @@ OffroadHome::OffroadHome(QWidget* parent) : QFrame(parent) {
   center_layout = new QStackedLayout();
 
   QWidget *home_widget = new QWidget(this);
-  {
-    QHBoxLayout *home_layout = new QHBoxLayout(home_widget);
-    home_layout->setContentsMargins(0, 0, 0, 0);
-    home_layout->setSpacing(30);
+//  {
+//    QHBoxLayout *home_layout = new QHBoxLayout(home_widget);
+//    home_layout->setContentsMargins(0, 0, 0, 0);
+//    home_layout->setSpacing(30);
 
 //    // left: PrimeAdWidget
 //    QStackedWidget *left_widget = new QStackedWidget(this);
@@ -204,7 +204,7 @@ OffroadHome::OffroadHome(QWidget* parent) : QFrame(parent) {
 //    right_column->addWidget(setup_widget, 1);
 //
 //    home_layout->addWidget(right_widget, 1);
-  }
+//  }
   center_layout->addWidget(home_widget);
 
   // add update & alerts widgets
