@@ -34,9 +34,11 @@ struct ChatLine @0x80ae746ee2596b11 {
   role @1 :Role;
 
   enum Role {
-    user @0;
-    assistant @1;
-    car @2;
+    listening @0;
+    user @1;
+    assistant @2;
+    car @3;
+    timeout @4;
   }
 }
 

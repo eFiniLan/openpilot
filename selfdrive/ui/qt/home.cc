@@ -67,7 +67,12 @@ void HomeWindow::updateState(const UIState &s) {
     }
     const auto cl = sm["chatLine"].getChatLine();
 
-    if (cl.getRole() == cereal::ChatLine::Role::USER) {
+    // Check for new messages from the system
+    if (cl.getRole() == cereal::ChatLine::Role::LISTENING) {
+      notification->showNotification(true);
+      notification->resetHideTimer(60000);
+    }
+    else if (cl.getRole() == cereal::ChatLine::Role::USER) {
       auto text = cl.getText();
       notification->addMessage(QString::fromStdString(text), true);
       notification->resetHideTimer(60000);
@@ -76,6 +81,10 @@ void HomeWindow::updateState(const UIState &s) {
       auto text = cl.getText();
       notification->addMessage(QString::fromStdString(text), false);
       notification->resetHideTimer(60000);
+    }
+    if (cl.getRole() == cereal::ChatLine::Role::TIMEOUT) {
+      notification->showNotification(false);
+      notification->resetHideTimer(5000);
     }
   }
 }
