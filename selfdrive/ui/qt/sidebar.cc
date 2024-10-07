@@ -130,12 +130,12 @@ void Sidebar::paintEvent(QPaintEvent *event) {
     p.drawEllipse(x, 196, 27, 27);
     x += 37;
   }
-//
-//  p.setFont(InterFont(35));
-//  p.setPen(QColor(0xff, 0xff, 0xff));
-//  const QRect r = QRect(50, 247, 100, 50);
-//  p.drawText(r, Qt::AlignCenter, net_type);
-//
+
+  p.setFont(InterFont(35));
+  p.setPen(QColor(0xff, 0xff, 0xff));
+  const QRect r = QRect(50, 247, 100, 50);
+  p.drawText(r, Qt::AlignCenter, net_type);
+
 //  // metrics
 //  drawMetric(p, temp_status.first, temp_status.second, 338);
 //  drawMetric(p, panda_status.first, panda_status.second, 496);
