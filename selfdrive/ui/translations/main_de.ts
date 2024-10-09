@@ -1074,6 +1074,34 @@ This may take up to a minute.</source>
         <source>Region Setting</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Japanese</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Openai</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groq</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>STT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LLM</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Updater</name>

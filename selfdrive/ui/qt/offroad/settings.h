@@ -74,7 +74,10 @@ private:
   Params params;
   std::map<std::string, ParamControl*> toggles;
   ButtonParamControl *long_personality_setting;
+  ButtonParamControl *language_setting;
   ButtonParamControl *region_setting;
+  ButtonParamControl *stt_setting;
+  ButtonParamControl *llm_setting;
 
   void updateToggles();
 };

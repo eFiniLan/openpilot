@@ -201,7 +201,10 @@ std::unordered_map<std::string, uint32_t> keys = {
     {"UpdaterLastFetchTime", PERSISTENT},
     {"Version", PERSISTENT},
     {"AceAutoPip", PERSISTENT},
-    {"RegionSetting", PERSISTENT},
+    {"AceLanguageSetting", PERSISTENT},
+    {"AceRegionSetting", PERSISTENT},
+    {"AceSTT", PERSISTENT},
+    {"AceLLM", PERSISTENT},
 };
 
 } // namespace

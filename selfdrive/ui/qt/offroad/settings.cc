@@ -80,14 +80,29 @@ TogglesPanel::TogglesPanel(SettingsWindow *parent) : ListWidget(parent) {
                                           "../assets/offroad/icon_speed_limit.png",
                                           longi_button_texts);
 
-  // set up uiState update for personality setting
-  QObject::connect(uiState(), &UIState::uiUpdate, this, &TogglesPanel::updateState);
+  std::vector<QString> language_button_texts{tr("Japanese"), tr("English")};
+  language_setting = new ButtonParamControl("AceLanguageSetting", tr("Language Setting"),
+                                          "",
+                                          "",
+                                          language_button_texts);
 
   std::vector<QString> region_button_texts{tr("Japan"), tr("Vietnam")};
-  region_setting = new ButtonParamControl("RegionSetting", tr("Region Setting"),
+  region_setting = new ButtonParamControl("AceRegionSetting", tr("Region Setting"),
                                           "",
                                           "",
                                           region_button_texts);
+
+  std::vector<QString> stt_button_texts{tr("Openai"), tr("Groq")};
+  stt_setting = new ButtonParamControl("AceSTT", tr("STT"),
+                                          "",
+                                          "",
+                                          stt_button_texts);
+
+  std::vector<QString> llm_button_texts{tr("Openai"), tr("Groq")};
+  llm_setting = new ButtonParamControl("AceLLM", tr("LLM"),
+                                          "",
+                                          "",
+                                          llm_button_texts);
 
   // set up uiState update for personality setting
   QObject::connect(uiState(), &UIState::uiUpdate, this, &TogglesPanel::updateState);
@@ -107,7 +122,10 @@ TogglesPanel::TogglesPanel(SettingsWindow *parent) : ListWidget(parent) {
       addItem(long_personality_setting);
     }
   }
+  addItem(language_setting);
   addItem(region_setting);
+  addItem(stt_setting);
+  addItem(llm_setting);
 
   // Toggles with confirmation dialogs
   toggles["ExperimentalMode"]->setActiveIcon("../assets/img_experimental.svg");
