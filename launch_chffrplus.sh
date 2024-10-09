@@ -78,7 +78,12 @@ function launch {
   # hardware specific init
   if [ -f /AGNOS ]; then
     if [ ! -f /data/params/d/AceAutoPip ]; then
-      pip install soundfile openwakeword silero_vad groq openai geopy
+      pip install soundfile
+      pip install openwakeword
+      pip install silero_vad
+      pip groq
+      pip openai
+      pip geopy
       echo -n 1 > /data/params/d/AceAutoPip
     fi
     agnos_init
