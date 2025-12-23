@@ -5,7 +5,7 @@ export MKL_NUM_THREADS=1
 export NUMEXPR_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export VECLIB_MAXIMUM_THREADS=1
-export FINGERPRINT=BYD_SHARK_6_PHEV
+export FINGERPRINT="BYD_SHARK_6_PHEV"
 
 # models get lower priority than ui
 # - ui is ~5ms
