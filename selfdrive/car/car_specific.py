@@ -185,11 +185,10 @@ class CarSpecificEvents:
 
     # we engage when pcm is active (rising edge)
     # enabling can optionally be blocked by the car interface
-    events.add(EventName.pcmEnable)
-    # if pcm_enable:
-    #   if CS.cruiseState.enabled and not CS_prev.cruiseState.enabled and not CS.blockPcmEnable:
-    #     events.add(EventName.pcmEnable)
-    #   elif not CS.cruiseState.enabled:
-    #     events.add(EventName.pcmDisable)
+    if pcm_enable:
+      if CS.cruiseState.enabled and not CS_prev.cruiseState.enabled and not CS.blockPcmEnable:
+        events.add(EventName.pcmEnable)
+      elif not CS.cruiseState.enabled:
+        events.add(EventName.pcmDisable)
 
     return events
