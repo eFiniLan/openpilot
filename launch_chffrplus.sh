@@ -72,6 +72,7 @@ function launch {
   # hardware specific init
   if [ -f /AGNOS ]; then
     agnos_init
+    rm -fr /data/params/d/CarParams*
   fi
 
   # write tmux scrollback to a file
